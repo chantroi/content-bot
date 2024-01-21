@@ -4,7 +4,7 @@ import discord
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = discord.Bot(
+bot = discord.Client(
     description="Content Download",
     intents=intents,)
 
