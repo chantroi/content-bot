@@ -1,7 +1,7 @@
 import pycord
 from init import bot_token
 
-bot = discord.Bot()
+bot = pycord.Bot()
 
 @bot.slash_command()
 async def hello(ctx, name: str = None):
