@@ -16,5 +16,6 @@ async def hello(ctx, name: str = None):
 @bot.user_command(name="Say Hello")
 async def hi(ctx, user):
     await ctx.respond(f"{ctx.author.mention} says hello to {user.name}!")
-
+    
+bot.load_extension(basic)
 bot.run(bot_token)
