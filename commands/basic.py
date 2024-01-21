@@ -7,4 +7,4 @@ async def content(ctx):
     await ctx.respond("Đây là Content Download phiên bản Discord")
     
 async def setup(bot):
-    bot.add_application_command(basic)
+    await bot.add_application_command(basic)
