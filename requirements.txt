@@ -1,2 +1,4 @@
+discord
 pycord
+requests
 deta
