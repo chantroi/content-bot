@@ -4,7 +4,7 @@ import discord
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(command_prefix=commands.when_mentioned_or("!"),
+bot = discord.Bot(
     description="Content Download",
     intents=intents,)
 
