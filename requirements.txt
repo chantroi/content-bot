@@ -1,4 +1,3 @@
-discord
-pycord
+py-cord==2.4
 requests
 deta
