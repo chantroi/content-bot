@@ -3,4 +3,4 @@ import os
 
 deta = Deta(os.getenv("DETA_KEY"))
 base = deta.Base("tokens")
-bot_token = base.get("discord")
+bot_token = base.get("discord")["token"]
