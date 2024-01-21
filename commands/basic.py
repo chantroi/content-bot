@@ -1,6 +1,6 @@
 import discord
 
-basic = discord.SlashCommand("basic")
+basic = discord.SlashCommandGroup()
 
 @basic.command()
 async def content(ctx):
