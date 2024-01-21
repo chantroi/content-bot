@@ -19,5 +19,5 @@ async def hi(ctx, user):
    
 @bot.event
 async def on_ready():
-    await bot.load_extensions("commands.basic")
+    await bot.load_extensions("commands")
 bot.run(bot_token)
