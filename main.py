@@ -1,4 +1,4 @@
-import discord
+import pycord
 from init import bot_token
 
 bot = discord.Bot()
