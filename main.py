@@ -10,7 +10,6 @@ bot = discord.Bot(
 
 @bot.event
 async def on_ready():
-    print("Bot đã chạy")
-
-bot.load_extension("commands")
+    await bot.load_extension("commands")
+    print("Bot đã hoạt động")
 bot.run(bot_token)
