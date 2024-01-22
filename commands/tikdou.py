@@ -5,6 +5,7 @@ import os
 dapi = os.getenv("DAPI")
 
 async def tikdou(ctx):
+    await ctx.typing()
     url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
     r = requests.get(dapi = "/tikdou", params={"url": url}).json()
     dl_link = r.get("url")
