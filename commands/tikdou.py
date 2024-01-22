@@ -7,7 +7,7 @@ dapi = os.getenv("DAPI")
 class TTDY:
     def __init__(self, bot):
         self.bot = bot
-    @bot.listen()
+    @self.bot.listen()
     async def tikdou(ctx):
         await ctx.typing()
         url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
