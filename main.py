@@ -1,8 +1,5 @@
-from init import bot_token
+from init import bot_token, dapi
 import discord
-import os
-
-dapi = os.getenv("DETA_KEY")
 
 intents = discord.Intents.default()
 intents.message_content = True
