@@ -1,9 +1,9 @@
 import discord
 
-basic = discord.SlashCommand("basic")
-
 class Basic:
-    @basic.command()
+    def __init__(self, bot):
+        self.bot = bot
+    @self.bot.slash_command()
     async def content(ctx):
         await ctx.respond("Đây là Content Download phiên bản Discord")
     
