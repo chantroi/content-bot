@@ -9,7 +9,7 @@ bot = discord.Bot(
     intents=intents,)
 
 @bot.event
-async def on_ready(ctx):
+async def on_ready():
     print("Bot đã chạy")
 
 bot.load_extension("commands")
