@@ -8,7 +8,7 @@ class TTDY:
     def __init__(self, bot):
         self.bot = bot
     @self.bot.listen()
-    async def tikdou(ctx):
+    async def tikdou(self, ctx):
         await ctx.typing()
         url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
         r = requests.get(dapi = "/tikdou", params={"url": url}).json()
