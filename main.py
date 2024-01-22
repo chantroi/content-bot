@@ -8,5 +8,5 @@ bot = discord.Bot(
     description="Content Download",
     intents=intents,)
 
-bot.load_extension("commands.basic")
+bot.load_extension("commands")
 bot.run(bot_token)
