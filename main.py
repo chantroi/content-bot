@@ -4,9 +4,7 @@ import discord
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(
-    description="Content Download",
-    intents=intents,)
+bot = commands.Bot(intents=intents)
 
 @bot.event
 async def on_ready():
