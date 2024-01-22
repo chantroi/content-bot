@@ -8,4 +8,4 @@ class Basic(commands.Cog):
         await ctx.respond("Đây là Content Download phiên bản Discord")
     
 def setup(bot):
-    bot.add_cog(Basic())
+    bot.add_cog(Basic(bot))
