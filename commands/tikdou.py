@@ -11,7 +11,7 @@ class TTDY(commands.Cog):
     @commands.command
     async def on_message(self, ctx):
         await ctx.typing()
-        url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
+        url = re.search(r"(?P<url>https?://[^\s]+)", ctx.message).group("url")
         r = requests.get(dapi = "/tikdou", params={"url": url}).json()
         dl_link = r.get("url")
         if isinstance(dl_link, list):
