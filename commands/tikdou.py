@@ -1,13 +1,14 @@
+from discord.ext import commands
 import discord
 import requests
 import os
 
 dapi = os.getenv("DAPI")
 
-class TTDY:
+class TTDY(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    @self.bot.listen()
+    @commands.listen()
     async def tikdou(self, ctx):
         await ctx.typing()
         url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
