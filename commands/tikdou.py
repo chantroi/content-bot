@@ -15,5 +15,5 @@ async def tikdou(ctx):
         await ctx.respond(file=discord.File(dl_link))
     await ctx.delete()
     
-async def setup (bot):
+async def setup(bot):
     await bot.add_listener(tikdou)
