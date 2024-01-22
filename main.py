@@ -1,4 +1,3 @@
-from discord.ext import commands
 from init import bot_token
 import discord
 
