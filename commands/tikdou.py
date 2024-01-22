@@ -1,15 +1,15 @@
-from discord import Cog
+from discord.ext import commands
 import discord
 import requests
 import os
 
 dapi = os.getenv("DAPI")
 
-class TTDY(Cog):
+class TTDY(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    @Cog.listener()
-    async def tikdou(self, ctx):
+    @commands.event
+    async def on_message(self, ctx):
         await ctx.typing()
         url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
         r = requests.get(dapi = "/tikdou", params={"url": url}).json()
