@@ -8,5 +8,9 @@ bot = discord.Bot(
     description="Content Download",
     intents=intents,)
 
+@bot.event
+async def on_ready(ctx):
+    print("Bot đã chạy")
+
 bot.load_extension("commands")
 bot.run(bot_token)
