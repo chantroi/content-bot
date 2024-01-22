@@ -1,10 +1,9 @@
 import discord
+from discord.ext import commands
 
 class Basic:
-    def __init__(self, bot):
-        self.bot = bot
-    @self.bot.slash_command()
-    async def content(self, ctx):
+    @commands.slash_command()
+    async def content(ctx):
         await ctx.respond("Đây là Content Download phiên bản Discord")
     
 def setup(bot):
