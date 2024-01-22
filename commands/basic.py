@@ -7,4 +7,4 @@ class Basic:
         await ctx.respond("Đây là Content Download phiên bản Discord")
     
 def setup(bot):
-    bot.add_cog(Basic(bot))
+    bot.add_cog(Basic())
