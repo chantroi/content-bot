@@ -21,4 +21,4 @@ class TTDY:
         await ctx.delete()
     
 def setup(bot):
-    bot.add_cogs(TTDY(bot))
+    bot.add_cog(TTDY(bot))
