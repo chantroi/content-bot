@@ -10,5 +10,5 @@ bot = commands.Bot(intents=intents)
 async def on_ready():
     print("OK")
 
-bot.load_extension("commands")
+bot.load_extensions("commands")
 bot.run(bot_token)
