@@ -8,7 +8,7 @@ dapi = os.getenv("DAPI")
 class TTDY(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    @commands.event
+    @commands.command
     async def on_message(self, ctx):
         await ctx.typing()
         url = re.search(r"(?P<url>https?://[^\s]+)", ctx.content).group("url")
