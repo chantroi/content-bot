@@ -11,6 +11,5 @@ bot = discord.Bot(
 @bot.event
 async def on_ready():
     print("OK")
-
-bot.load_extension("commands")
+    bot.load_extension("commands")
 bot.run(bot_token)
