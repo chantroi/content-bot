@@ -27,10 +27,12 @@ async def on_message(message):
             for link in dl_link:
                 bytes_data = requests.get(link).content
                 file = io.BytesIO(bytes_data)
+                file.name = "image.jpg"
                 await message.channel.send(file=discord.File(file))
         else:
             bytes_data = requests.get(dl_link).content
             file = io.BytesIO(bytes_data)
+            file.name = "video.mp4"
             await message.channel.send(file=discord.File(file))
         await message.delete()
     
