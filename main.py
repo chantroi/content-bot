@@ -2,6 +2,7 @@ from init import bot_token, dapi
 from discord.ext import commands
 import discord
 import requests
+import asyncio
 import re
 import io
 
