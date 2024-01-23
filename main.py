@@ -1,4 +1,5 @@
 from init import bot_token, dapi
+from discord.ext import commands
 import discord
 import requests
 import re
@@ -6,7 +7,7 @@ import io
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = discord.Bot(intents=intents)
+bot = commands.Bot(intents=intents)
 
 @bot.event
 async def on_ready():
