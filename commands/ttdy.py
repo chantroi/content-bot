@@ -1,8 +1,6 @@
 from discord.ext import commands
 from init import dapi
-import requests
-import re
-import io
+import requests, re, io, discord
 
 class TTDy(commands.Cog):
     def __init__(self, bot):
