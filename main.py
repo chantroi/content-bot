@@ -2,7 +2,7 @@ from init import bot_token, dapi
 import discord
 import requests
 import re
-import os
+import io
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -25,9 +25,13 @@ async def on_message(message):
         dl_link = r.get("url")
         if isinstance(dl_link, list):
             for link in dl_link:
-                await message.channel.send(file=discord.File(link))
+                bytes_data = requests.get(link).content
+                file = io.BytesIO(bytes_data)
+                await message.channel.send(file=discord.File(file))
         else:
-            await message.channel.send(file=discord.File(dl_link))
+            bytes_data = requests.get(dl_link)
+            file = io.BytesIO(bytes_data)
+            await message.channel.send(file=discord.File(file))
         await message.delete()
     
 bot.run(bot_token)
