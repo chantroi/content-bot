@@ -28,7 +28,7 @@ class TTDy(commands.Cog):
                 await message.channel.send(file=discord.File(file))
                 if message.channel == self.bot.get_channel(1095488012638507028):
                     print("Gửi ở thư viện")
-            await message.delete()
+                    await message.delete()
             
 def setup(bot):
     bot.add_cog(TTDy(bot))
