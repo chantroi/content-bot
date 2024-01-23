@@ -1,4 +1,4 @@
-from init import bot_token, dapi
+from init import bot_token
 from discord.ext import commands
 import discord
 import asyncio
