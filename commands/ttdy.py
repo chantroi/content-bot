@@ -25,7 +25,7 @@ class TTDy(commands.Cog):
                 file.name = "video.mp4"
                 await message.channel.send(file=discord.File(file))
                 if message.channel == self.bot.get_channel(1095488012638507028):
-                    req = requests.post(f"https://api.telegram.org/bot{tg_token}/sendMessage", params={"chat_id": "contentdownload", "text": url})
+                    req = requests.post(f"https://api.telegram.org/bot{tg_token}/sendMessage", params={"chat_id": -1001559828576, "text": url})
                     print(req.text)
                     await message.delete()
             
