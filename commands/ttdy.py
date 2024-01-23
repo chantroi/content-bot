@@ -1,5 +1,5 @@
 from discord.ext import commands
-froom init import dapi
+from init import dapi
 import requests
 import re
 import io
