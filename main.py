@@ -29,7 +29,7 @@ async def on_message(message):
                 file = io.BytesIO(bytes_data)
                 await message.channel.send(file=discord.File(file))
         else:
-            bytes_data = requests.get(dl_link)
+            bytes_data = requests.get(dl_link).content
             file = io.BytesIO(bytes_data)
             await message.channel.send(file=discord.File(file))
         await message.delete()
