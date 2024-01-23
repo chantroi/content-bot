@@ -1,5 +1,5 @@
 from discord.ext import commands
-from init import dapi
+from init import dapi, tg_token
 import requests, re, io, discord
 
 class TTDy(commands.Cog):
@@ -25,7 +25,8 @@ class TTDy(commands.Cog):
                 file.name = "video.mp4"
                 await message.channel.send(file=discord.File(file))
                 if message.channel == self.bot.get_channel(1095488012638507028):
-                    print("Gửi ở thư viện")
+                    req = requests.post(f"https://api.telegram.org/bot{tg_token}/sendMessage", params={"chat_id": "contentdownload", "text": url})
+                    print(req.text)
                     await message.delete()
             
 def setup(bot):
