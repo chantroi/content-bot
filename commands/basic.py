@@ -1,5 +1,4 @@
 from discord.ext import commands
-import asyncio
 
 class Basic(commands.Cog):
     def __init__(self, bot):
@@ -16,9 +15,7 @@ class Basic(commands.Cog):
             message = await ctx.respond(f"Đã xoá {limit} tin nhắn trong kênh {ctx.channel.mention}")
         else:
             await ctx.channel.purge()
-            message = await ctx.respond(f"Đã xoá mọi tin nhắn trong kênh {ctx.channel.mention}")
-        await asyncio.sleep(10)
-        await message.delete()
+            message = await ctx.respond(f"Đã xoá mọi tin nhắn trong kênh {ctx.channel.mention}", delete_after=10)
 
 def setup(bot):
     bot.add_cog(Basic(bot))
