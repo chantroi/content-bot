@@ -18,14 +18,15 @@ async def content(ctx):
     await ctx.respond("Đây là Content Download phiên bản Discord")
 
 @bot.slash_command()
-async def clear(ctx, limit: int = None): # Thêm một tham số kiểu số nguyên và đặt giá trị mặc định là None
-    if limit: # Kiểm tra xem người dùng có nhập giá trị cho tham số này hay không
-        await ctx.channel.purge(limit=limit) # Xoá số lượng tin nhắn tương ứng với giá trị của tham số
-        await ctx.respond(f"Đã xoá {limit} tin nhắn trong kênh {ctx.channel.mention}", ephemeral=True) # Gửi một phản hồi tạm thời cho người dùng
+async def clear(ctx, limit: int = None):
+    if limit:
+        await ctx.channel.purge(limit=limit)
+        message = await ctx.respond(f"Đã xoá {limit} tin nhắn trong kênh {ctx.channel.mention}")
     else:
-        await ctx.channel.purge() # Xoá tất cả các tin nhắn trong kênh
-        await ctx.respond(f"Đã xoá mọi tin nhắn trong kênh {ctx.channel.mention}", ephemeral=True) # Gửi một phản hồi tạm thời cho người dùng
-        
+        await ctx.channel.purge()
+        message = await ctx.respond(f"Đã xoá mọi tin nhắn trong kênh {ctx.channel.mention}")
+    await asyncio.sleep(10)
+    await message.delete()
     
 @bot.listen()
 async def on_message(message):
