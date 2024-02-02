@@ -1,5 +1,5 @@
 from discord.ext import commands
-from init import dapi, tg_token
+from environ import dapi, tg_token
 import requests, re, io, discord
 
 class TTDy(commands.Cog):
