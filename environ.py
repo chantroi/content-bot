@@ -7,6 +7,7 @@ def res():
     return json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))
     
 res = res()
+dapi = res.api.dapi_url
 #deta = Deta(res.key.web_collection)
 bot_token = res.bot.discord
 tg_token = res.bot.td_tg
