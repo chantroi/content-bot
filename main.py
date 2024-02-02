@@ -1,4 +1,4 @@
-from init import bot_token
+from environ import bot_token
 from discord.ext import commands
 import discord
 
