@@ -12,10 +12,10 @@ class Basic(commands.Cog):
     async def clear(self, ctx, limit: int = None):
         if limit:
             await ctx.channel.purge(limit=limit)
-            message = await ctx.respond(f"Đã xoá {limit} tin nhắn trong kênh {ctx.channel.mention}")
+            await ctx.respond(f"Đã xoá {limit} tin nhắn trong kênh {ctx.channel.mention}")
         else:
             await ctx.channel.purge()
-            message = await ctx.respond(f"Đã xoá mọi tin nhắn trong kênh {ctx.channel.mention}", delete_after=10)
+            await ctx.respond(f"Đã xoá mọi tin nhắn trong kênh {ctx.channel.mention}", delete_after=10)
 
 def setup(bot):
     bot.add_cog(Basic(bot))
