@@ -9,7 +9,7 @@ def tg_send(original, link):
     {"text": "Channel", "url": "https://t.me/contentdownload"},
     ]
     KEYBOARD = {"inline_keyboard": [BUTTONS]}
-    VIDEO = {"video": link, "reply_markup": KEYBOARD, "caption": "_*Discord Cross-Platform*_"}
+    VIDEO = {"chat_id": "contentdownload", "video": link, "reply_markup": KEYBOARD, "caption": "_*Discord Cross-Platform*_"}
     URL = f"https://api.telegram.org/bot{tg_token}/sendVideo?chat_id=contentdownload"
     response = requests.post(URL, json=VIDEO)
     print(response.json())
