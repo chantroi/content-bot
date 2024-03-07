@@ -3,4 +3,3 @@ requests
 deta
 gunicorn
 Flask
-watchdog
