@@ -202,7 +202,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "secret = requests.get(os.getenv(\"SECRET\"), timeout=99).text\nres = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.discord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "secret = requests.get(os.getenv(\"SECRET\"), timeout=99).text\nres = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
         "detail": "environment",
         "documentation": {}
     },
@@ -211,7 +211,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "res = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.discord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "res = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
         "detail": "environment",
         "documentation": {}
     },
@@ -220,7 +220,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "dapi = res.api.dapi\nbot_token = res.bot.discord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "dapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
         "detail": "environment",
         "documentation": {}
     },
@@ -229,7 +229,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "bot_token = res.bot.discord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "bot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
         "detail": "environment",
         "documentation": {}
     },
