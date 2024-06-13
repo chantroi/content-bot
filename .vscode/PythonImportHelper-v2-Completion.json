@@ -1,5 +1,21 @@
 [
     {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "commands",
         "importPath": "discord.ext",
         "description": "discord.ext",
@@ -118,11 +134,21 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
+        "label": "home",
+        "kind": 2,
+        "importPath": "JMusic.web",
+        "description": "JMusic.web",
+        "peekOfCode": "def home():\n    return \"Running\"",
+        "detail": "JMusic.web",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "JMusic.web",
+        "description": "JMusic.web",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef home():\n    return \"Running\"",
+        "detail": "JMusic.web",
         "documentation": {}
     },
     {

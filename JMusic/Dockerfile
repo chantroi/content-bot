@@ -6,7 +6,7 @@ COPY --chown=user . /app
 WORKDIR /app
 RUN apt update && apt install -y default-jdk
 
-RUN pip install -r requirements.txt
+RUN pip install flask gunicorn
 
 EXPOSE 7860
 
