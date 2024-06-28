@@ -100,14 +100,6 @@
         "documentation": {}
     },
     {
-        "label": "Deta",
-        "importPath": "deta",
-        "description": "deta",
-        "isExtraImport": true,
-        "detail": "deta",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -156,7 +148,7 @@
         "kind": 6,
         "importPath": "commands.basic",
         "description": "commands.basic",
-        "peekOfCode": "class Basic(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n    @commands.slash_command()\n    async def content(self, ctx):\n        await ctx.respond(\"Đây là Content Download phiên bản Discord\")\n    @commands.slash_command()\n    async def clear(self, ctx, limit: int = None):\n        if limit:\n            await ctx.channel.purge(limit=limit)",
+        "peekOfCode": "class Basic(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n    @commands.Cog.listener()\n    async def on_ready(self):\n        print(\"OK\")\n    @commands.Cog.listener()\n    async def on_command_error(self, ctx, error):\n        if isinstance(error, commands.MissingRequiredArgument):\n            await ctx.send(\"Bạn chưa nhập đủ tham số\")",
         "detail": "commands.basic",
         "documentation": {}
     },
@@ -185,42 +177,6 @@
         "description": "commands.ttdy",
         "peekOfCode": "def setup(bot):\n    bot.add_cog(TTDy(bot))",
         "detail": "commands.ttdy",
-        "documentation": {}
-    },
-    {
-        "label": "deta",
-        "kind": 5,
-        "importPath": "init.db",
-        "description": "init.db",
-        "peekOfCode": "deta = Deta(os.getenv(\"DETA_KEY\"))\nbase = deta.Base(\"tokens\")\nbot_token = base.get(\"discord\")[\"token\"]\ntg_token = base.get(\"bot\")[\"td\"]",
-        "detail": "init.db",
-        "documentation": {}
-    },
-    {
-        "label": "base",
-        "kind": 5,
-        "importPath": "init.db",
-        "description": "init.db",
-        "peekOfCode": "base = deta.Base(\"tokens\")\nbot_token = base.get(\"discord\")[\"token\"]\ntg_token = base.get(\"bot\")[\"td\"]",
-        "detail": "init.db",
-        "documentation": {}
-    },
-    {
-        "label": "bot_token",
-        "kind": 5,
-        "importPath": "init.db",
-        "description": "init.db",
-        "peekOfCode": "bot_token = base.get(\"discord\")[\"token\"]\ntg_token = base.get(\"bot\")[\"td\"]",
-        "detail": "init.db",
-        "documentation": {}
-    },
-    {
-        "label": "tg_token",
-        "kind": 5,
-        "importPath": "init.db",
-        "description": "init.db",
-        "peekOfCode": "tg_token = base.get(\"bot\")[\"td\"]",
-        "detail": "init.db",
         "documentation": {}
     },
     {

@@ -5,9 +5,29 @@ class Basic(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print("OK")
+
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send("Bạn chưa nhập đủ tham số")
+
     @commands.slash_command()
-    async def content(self, ctx):
-        await ctx.respond("Đây là Content Download phiên bản Discord")
+    async def ping(self, ctx):
+        await ctx.respond(f"Delay: {round(self.bot.latency * 1000)}ms")
+
+    @commands.slash_command()
+    async def help(self, ctx):
+        await ctx.respond(
+            f"**{self.bot.user.name}**\n"
+            f"Các tính năng của **{self.bot.user.name}**\n\n"
+            f"**Các tính năng:**\n"
+            f"`ping` - Đo thời gian chạy bot\n"
+            f"`help` - Xem thông tin bot\n"
+            f"`clear` - Xoá tin nhắn trong kênh\n"
+        )
 
     @commands.slash_command()
     async def clear(self, ctx, limit: int = None):
