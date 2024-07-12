@@ -65,7 +65,7 @@ class GeminiCommands(commands.Cog):
         await ctx.respond("Gemini 1.5 Flash", ephemeral=True, delete_after=10)
 
     @commands.Cog.listener()
-    async def gemini(self, message):
+    async def on_message(self, message):
         if message.author == self.bot.user:
             return
         if self.bot.user.mentioned_in(message):
@@ -76,6 +76,6 @@ class GeminiCommands(commands.Cog):
                 )
             )
 
+
 def setup(bot):
     bot.add_cog(GeminiCommands(bot))
-    
