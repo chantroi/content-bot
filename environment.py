@@ -8,3 +8,4 @@ res = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))
 dapi = res.api.dapi
 bot_token = res.bot.contentdiscord
 tg_token = res.bot.tiktokdouyin
+google_api = res.key.google_ai

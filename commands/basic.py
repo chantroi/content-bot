@@ -24,7 +24,7 @@ class Basic(commands.Cog):
             f"**{self.bot.user.name}**\n"
             f"Các tính năng của **{self.bot.user.name}**\n\n"
             f"**Các tính năng:**\n"
-            f"`ping` - Đo thời gian chạy bot\n"
+            f"`ping` - Kiểm tra độ trễ\n"
             f"`help` - Xem thông tin bot\n"
             f"`clear` - Xoá tin nhắn trong kênh\n"
         )

@@ -40,6 +40,55 @@
         "documentation": {}
     },
     {
+        "label": "commands",
+        "importPath": "discord.ext",
+        "description": "discord.ext",
+        "isExtraImport": true,
+        "detail": "discord.ext",
+        "documentation": {}
+    },
+    {
+        "label": "google.generativeai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "google.generativeai",
+        "description": "google.generativeai",
+        "detail": "google.generativeai",
+        "documentation": {}
+    },
+    {
+        "label": "google_api",
+        "importPath": "environment",
+        "description": "environment",
+        "isExtraImport": true,
+        "detail": "environment",
+        "documentation": {}
+    },
+    {
+        "label": "dapi",
+        "importPath": "environment",
+        "description": "environment",
+        "isExtraImport": true,
+        "detail": "environment",
+        "documentation": {}
+    },
+    {
+        "label": "tg_token",
+        "importPath": "environment",
+        "description": "environment",
+        "isExtraImport": true,
+        "detail": "environment",
+        "documentation": {}
+    },
+    {
+        "label": "bot_token",
+        "importPath": "environment",
+        "description": "environment",
+        "isExtraImport": true,
+        "detail": "environment",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -73,30 +122,6 @@
         "importPath": "discord",
         "description": "discord",
         "detail": "discord",
-        "documentation": {}
-    },
-    {
-        "label": "dapi",
-        "importPath": "environment",
-        "description": "environment",
-        "isExtraImport": true,
-        "detail": "environment",
-        "documentation": {}
-    },
-    {
-        "label": "tg_token",
-        "importPath": "environment",
-        "description": "environment",
-        "isExtraImport": true,
-        "detail": "environment",
-        "documentation": {}
-    },
-    {
-        "label": "bot_token",
-        "importPath": "environment",
-        "description": "environment",
-        "isExtraImport": true,
-        "detail": "environment",
         "documentation": {}
     },
     {
@@ -162,21 +187,39 @@
         "documentation": {}
     },
     {
+        "label": "Gemini",
+        "kind": 6,
+        "importPath": "commands.gemini",
+        "description": "commands.gemini",
+        "peekOfCode": "class Gemini:\n    def __init__(self, model_name: str = \"gemini-1.5-flash\"):\n        genai.configure(api_key=google_api)\n        self.generation_config = {\n            \"temperature\": 1,\n            \"top_p\": 0.95,\n            \"top_k\": 64,\n            \"max_output_tokens\": 8192,\n            \"response_mime_type\": \"text/plain\",\n        }",
+        "detail": "commands.gemini",
+        "documentation": {}
+    },
+    {
+        "label": "GeminiCommands",
+        "kind": 6,
+        "importPath": "commands.gemini",
+        "description": "commands.gemini",
+        "peekOfCode": "class GeminiCommands(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n        self.gemini = Gemini()\n    @commands.slash_command()\n    async def pro(self, ctx):\n        self.gemini = Gemini(\"gemini-1.5-pro\")\n        await ctx.respond(\"Gemini 1.5 Pro\", ephemeral=True, delete_after=10)\n    @commands.slash_command()\n    async def flash(self, ctx):",
+        "detail": "commands.gemini",
+        "documentation": {}
+    },
+    {
         "label": "TTDy",
         "kind": 6,
-        "importPath": "commands.ttdy",
-        "description": "commands.ttdy",
+        "importPath": "commands.tiktokdouyin",
+        "description": "commands.tiktokdouyin",
         "peekOfCode": "class TTDy(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n    @commands.Cog.listener()\n    async def on_message(self, message):\n        if any(match in message.content for match in [\"tiktok\", \"douyin\"]):\n            await message.channel.trigger_typing()\n            url = re.search(r\"(?P<url>https?://[^\\s]+)\", message.content).group(\"url\")\n            r = requests.get(dapi + \"/tikdou\", params={\"url\": url}, timeout=99).json()\n            dl_link = r.get(\"url\")",
-        "detail": "commands.ttdy",
+        "detail": "commands.tiktokdouyin",
         "documentation": {}
     },
     {
         "label": "setup",
         "kind": 2,
-        "importPath": "commands.ttdy",
-        "description": "commands.ttdy",
+        "importPath": "commands.tiktokdouyin",
+        "description": "commands.tiktokdouyin",
         "peekOfCode": "def setup(bot):\n    bot.add_cog(TTDy(bot))",
-        "detail": "commands.ttdy",
+        "detail": "commands.tiktokdouyin",
         "documentation": {}
     },
     {
@@ -184,7 +227,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "secret = requests.get(os.getenv(\"SECRET\"), timeout=99).text\nres = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "secret = requests.get(os.getenv(\"SECRET\"), timeout=99).text\nres = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin\ngoogle_api = res.key.google_ai",
         "detail": "environment",
         "documentation": {}
     },
@@ -193,7 +236,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "res = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "res = json.loads(secret, object_hook=lambda _: SimpleNamespace(**_))\ndapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin\ngoogle_api = res.key.google_ai",
         "detail": "environment",
         "documentation": {}
     },
@@ -202,7 +245,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "dapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "dapi = res.api.dapi\nbot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin\ngoogle_api = res.key.google_ai",
         "detail": "environment",
         "documentation": {}
     },
@@ -211,7 +254,7 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "bot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "bot_token = res.bot.contentdiscord\ntg_token = res.bot.tiktokdouyin\ngoogle_api = res.key.google_ai",
         "detail": "environment",
         "documentation": {}
     },
@@ -220,7 +263,16 @@
         "kind": 5,
         "importPath": "environment",
         "description": "environment",
-        "peekOfCode": "tg_token = res.bot.tiktokdouyin",
+        "peekOfCode": "tg_token = res.bot.tiktokdouyin\ngoogle_api = res.key.google_ai",
+        "detail": "environment",
+        "documentation": {}
+    },
+    {
+        "label": "google_api",
+        "kind": 5,
+        "importPath": "environment",
+        "description": "environment",
+        "peekOfCode": "google_api = res.key.google_ai",
         "detail": "environment",
         "documentation": {}
     },
