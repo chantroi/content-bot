@@ -205,11 +205,20 @@
         "documentation": {}
     },
     {
-        "label": "TTDy",
+        "label": "setup",
+        "kind": 2,
+        "importPath": "commands.gemini",
+        "description": "commands.gemini",
+        "peekOfCode": "def setup(bot):\n    bot.add_cog(GeminiCommands(bot))",
+        "detail": "commands.gemini",
+        "documentation": {}
+    },
+    {
+        "label": "TiktokDouyin",
         "kind": 6,
         "importPath": "commands.tiktokdouyin",
         "description": "commands.tiktokdouyin",
-        "peekOfCode": "class TTDy(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n    @commands.Cog.listener()\n    async def on_message(self, message):\n        if any(match in message.content for match in [\"tiktok\", \"douyin\"]):\n            await message.channel.trigger_typing()\n            url = re.search(r\"(?P<url>https?://[^\\s]+)\", message.content).group(\"url\")\n            r = requests.get(dapi + \"/tikdou\", params={\"url\": url}, timeout=99).json()\n            dl_link = r.get(\"url\")",
+        "peekOfCode": "class TiktokDouyin(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n    @commands.Cog.listener()\n    async def on_message(self, message):\n        if any(match in message.content for match in [\"tiktok\", \"douyin\"]):\n            await message.channel.trigger_typing()\n            url = re.search(r\"(?P<url>https?://[^\\s]+)\", message.content).group(\"url\")\n            r = requests.get(dapi + \"/tikdou\", params={\"url\": url}, timeout=99).json()\n            dl_link = r.get(\"url\")",
         "detail": "commands.tiktokdouyin",
         "documentation": {}
     },
@@ -218,7 +227,7 @@
         "kind": 2,
         "importPath": "commands.tiktokdouyin",
         "description": "commands.tiktokdouyin",
-        "peekOfCode": "def setup(bot):\n    bot.add_cog(TTDy(bot))",
+        "peekOfCode": "def setup(bot):\n    bot.add_cog(TiktokDouyin(bot))",
         "detail": "commands.tiktokdouyin",
         "documentation": {}
     },

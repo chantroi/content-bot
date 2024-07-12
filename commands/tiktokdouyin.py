@@ -6,7 +6,7 @@ from discord.ext import commands
 from environment import dapi, tg_token
 
 
-class TTDy(commands.Cog):
+class TiktokDouyin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -39,4 +39,4 @@ class TTDy(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(TTDy(bot))
+    bot.add_cog(TiktokDouyin(bot))

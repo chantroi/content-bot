@@ -75,3 +75,7 @@ class GeminiCommands(commands.Cog):
                     message.author,
                 )
             )
+
+def setup(bot):
+    bot.add_cog(GeminiCommands(bot))
+    
