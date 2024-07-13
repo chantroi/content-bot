@@ -16,10 +16,12 @@ class Basic(commands.Cog):
 
     @commands.slash_command()
     async def ping(self, ctx):
+        await ctx.channel.trigger_typing()
         await ctx.respond(f"Delay: {round(self.bot.latency * 1000)}ms")
 
     @commands.slash_command()
     async def help(self, ctx):
+        await ctx.channel.trigger_typing()
         await ctx.respond(
             f"**{self.bot.user.name}**\n"
             f"Các tính năng của **{self.bot.user.name}**\n\n"
@@ -31,6 +33,7 @@ class Basic(commands.Cog):
 
     @commands.slash_command()
     async def clear(self, ctx, limit: int = None):
+        await ctx.channel.trigger_typing()
         if limit:
             await ctx.channel.purge(limit=limit)
             await ctx.respond(

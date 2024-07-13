@@ -56,16 +56,19 @@ class GeminiCommands(commands.Cog):
 
     @commands.slash_command()
     async def pro(self, ctx):
+        await ctx.channel.trigger_typing()
         self.gemini = Gemini("gemini-1.5-pro")
-        await ctx.respond("Gemini 1.5 Pro", ephemeral=True, delete_after=10)
+        await ctx.respond("Gemini 1.5 Pro", delete_after=10)
 
     @commands.slash_command()
     async def flash(self, ctx):
+        await ctx.channel.trigger_typing()
         self.gemini = Gemini("gemini-1.5-flash")
-        await ctx.respond("Gemini 1.5 Flash", ephemeral=True, delete_after=10)
+        await ctx.respond("Gemini 1.5 Flash", delete_after=10)
 
     @commands.Cog.listener()
     async def on_message(self, message):
+        await message.channel.trigger_typing()
         if message.author == self.bot.user:
             return
         if self.bot.user.mentioned_in(message):

@@ -200,7 +200,7 @@
         "kind": 6,
         "importPath": "commands.gemini",
         "description": "commands.gemini",
-        "peekOfCode": "class GeminiCommands(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n        self.gemini = Gemini()\n    @commands.slash_command()\n    async def pro(self, ctx):\n        self.gemini = Gemini(\"gemini-1.5-pro\")\n        await ctx.respond(\"Gemini 1.5 Pro\", ephemeral=True, delete_after=10)\n    @commands.slash_command()\n    async def flash(self, ctx):",
+        "peekOfCode": "class GeminiCommands(commands.Cog):\n    def __init__(self, bot):\n        self.bot = bot\n        self.gemini = Gemini()\n    @commands.slash_command()\n    async def pro(self, ctx):\n        await ctx.channel.trigger_typing()\n        self.gemini = Gemini(\"gemini-1.5-pro\")\n        await ctx.respond(\"Gemini 1.5 Pro\", delete_after=10)\n    @commands.slash_command()",
         "detail": "commands.gemini",
         "documentation": {}
     },
