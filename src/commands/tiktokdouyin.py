@@ -15,7 +15,7 @@ class TiktokDouyin(commands.Cog):
         if any(match in message.content for match in ["tiktok", "douyin"]):
             await message.channel.trigger_typing()
             url = re.search(r"(?P<url>https?://[^\s]+)", message.content).group("url")
-            r = requests.get(dapi + "/tikdou", params={"url": url}, timeout=99).json()
+            r = requests.get(dapi, params={"url": url}, timeout=99).json()
             dl_link = r.get("url")
             if isinstance(dl_link, list):
                 for link in dl_link:
