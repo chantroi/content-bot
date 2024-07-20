@@ -10,4 +10,5 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 WORKDIR /app/src
-CMD bash start.sh
+
+ENTRYPOINT python -u main.py & cd /app && gunicorn -b :8000 web:app
