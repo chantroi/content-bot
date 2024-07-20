@@ -193,7 +193,7 @@
         "kind": 5,
         "importPath": "src.environment",
         "description": "src.environment",
-        "peekOfCode": "secret = requests.get(os.getenv(\"SECRET\"), timeout=99)\nres = secret.json()\ndapi = res['api']['dapi']['td']\nbot_token = res['bot']['contentdiscord']\ntg_token = res['bot']['tiktokdouyin']\ngoogle_api = res['key']['google_ai']",
+        "peekOfCode": "secret = requests.get(os.getenv(\"SECRET\"), timeout=99)\nres = secret.json()\ndapi = res[\"api\"][\"dapi\"][\"td\"]\nbot_token = res[\"bot\"][\"contentdiscord\"]\ntg_token = res[\"bot\"][\"tiktokdouyin\"]\ngoogle_api = res[\"key\"][\"google_ai\"]",
         "detail": "src.environment",
         "documentation": {}
     },
@@ -202,7 +202,7 @@
         "kind": 5,
         "importPath": "src.environment",
         "description": "src.environment",
-        "peekOfCode": "res = secret.json()\ndapi = res['api']['dapi']['td']\nbot_token = res['bot']['contentdiscord']\ntg_token = res['bot']['tiktokdouyin']\ngoogle_api = res['key']['google_ai']",
+        "peekOfCode": "res = secret.json()\ndapi = res[\"api\"][\"dapi\"][\"td\"]\nbot_token = res[\"bot\"][\"contentdiscord\"]\ntg_token = res[\"bot\"][\"tiktokdouyin\"]\ngoogle_api = res[\"key\"][\"google_ai\"]",
         "detail": "src.environment",
         "documentation": {}
     },
@@ -211,7 +211,7 @@
         "kind": 5,
         "importPath": "src.environment",
         "description": "src.environment",
-        "peekOfCode": "dapi = res['api']['dapi']['td']\nbot_token = res['bot']['contentdiscord']\ntg_token = res['bot']['tiktokdouyin']\ngoogle_api = res['key']['google_ai']",
+        "peekOfCode": "dapi = res[\"api\"][\"dapi\"][\"td\"]\nbot_token = res[\"bot\"][\"contentdiscord\"]\ntg_token = res[\"bot\"][\"tiktokdouyin\"]\ngoogle_api = res[\"key\"][\"google_ai\"]",
         "detail": "src.environment",
         "documentation": {}
     },
@@ -220,7 +220,7 @@
         "kind": 5,
         "importPath": "src.environment",
         "description": "src.environment",
-        "peekOfCode": "bot_token = res['bot']['contentdiscord']\ntg_token = res['bot']['tiktokdouyin']\ngoogle_api = res['key']['google_ai']",
+        "peekOfCode": "bot_token = res[\"bot\"][\"contentdiscord\"]\ntg_token = res[\"bot\"][\"tiktokdouyin\"]\ngoogle_api = res[\"key\"][\"google_ai\"]",
         "detail": "src.environment",
         "documentation": {}
     },
@@ -229,7 +229,7 @@
         "kind": 5,
         "importPath": "src.environment",
         "description": "src.environment",
-        "peekOfCode": "tg_token = res['bot']['tiktokdouyin']\ngoogle_api = res['key']['google_ai']",
+        "peekOfCode": "tg_token = res[\"bot\"][\"tiktokdouyin\"]\ngoogle_api = res[\"key\"][\"google_ai\"]",
         "detail": "src.environment",
         "documentation": {}
     },
@@ -238,7 +238,7 @@
         "kind": 5,
         "importPath": "src.environment",
         "description": "src.environment",
-        "peekOfCode": "google_api = res['key']['google_ai']",
+        "peekOfCode": "google_api = res[\"key\"][\"google_ai\"]",
         "detail": "src.environment",
         "documentation": {}
     },
