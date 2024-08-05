@@ -56,15 +56,18 @@ class GeminiCommands(commands.Cog):
 
     @commands.slash_command()
     async def pro(self, ctx):
-        await ctx.channel.trigger_typing()
         self.gemini = Gemini("gemini-1.5-pro")
         await ctx.respond("Gemini 1.5 Pro", delete_after=10)
 
     @commands.slash_command()
     async def flash(self, ctx):
-        await ctx.channel.trigger_typing()
         self.gemini = Gemini("gemini-1.5-flash")
         await ctx.respond("Gemini 1.5 Flash", delete_after=10)
+
+    @commands.slash_command()
+    async def model(self, ctx, model_name: str):
+        self.gemini = Gemini(model_name)
+        await ctx.respond(f"Model: {model_name}", delete_after=10)
 
     @commands.Cog.listener()
     async def on_message(self, message):
