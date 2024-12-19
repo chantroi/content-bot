@@ -3,7 +3,7 @@ import re
 import io
 import discord
 from discord.ext import commands
-from environment import dapi, tg_token
+from env_config import dapi, tg_token
 
 
 class TiktokDouyin(commands.Cog):
@@ -14,7 +14,9 @@ class TiktokDouyin(commands.Cog):
     async def on_message(self, message):
         if any(match in message.content for match in ["tiktok", "douyin"]):
             await message.channel.trigger_typing()
-            url = re.search(r"(?P<url>https?://[^\s]+)", message.content).group("url")
+            url = re.search(
+                r"(?P<url>https?://[^\s]+)", message.content).group("url")
+
             r = requests.get(dapi, params={"url": url}, timeout=99).json()
             dl_link = r.get("url")
             if isinstance(dl_link, list):

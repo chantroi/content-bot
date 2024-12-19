@@ -1,6 +1,6 @@
 from discord.ext import commands
 import google.generativeai as genai
-from environment import google_api
+from env_config import google_api
 
 
 class Gemini:
