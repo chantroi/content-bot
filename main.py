@@ -14,6 +14,6 @@ async def on_ready():
     print(f"BOT READY\n{bot_name} ({bot_id})")
 
 
-bot.load_extensions("extensions")
+bot.load_extensions("cogs")
 
 bot.run(bot_token)
